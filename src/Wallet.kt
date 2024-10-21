@@ -1,8 +1,5 @@
 class Wallet {
-    // Приватный атрибут для хранения суммы денег
     private var balance: Double = 0.0
-
-    // Метод для пополнения кошелька
     fun addMoney(amount: Double) {
         if (amount > 0) {
             balance += amount
@@ -12,7 +9,6 @@ class Wallet {
         }
     }
 
-    // Метод для траты денег
     fun spendMoney(amount: Double) {
         if (amount > 0 && amount <= balance) {
             balance -= amount
@@ -24,7 +20,6 @@ class Wallet {
         }
     }
 
-    // Метод для проверки текущего состояния кошелька
     fun checkBalance(): Double {
         println("Текущий баланс: $balance")
         return balance
@@ -32,15 +27,11 @@ class Wallet {
 }
 
 fun main() {
-    // Создаем объект кошелька
     val wallet = Wallet()
 
-    // Пополняем кошелек
     wallet.addMoney(100.0)
 
-    // Тратим деньги
     wallet.spendMoney(30.0)
 
-    // Проверяем текущий баланс
     wallet.checkBalance()
 }

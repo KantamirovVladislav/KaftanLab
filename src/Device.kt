@@ -1,44 +1,31 @@
-// Базовый класс "Устройство"
 open class Device(val name: String, val brand: String) {
-    
-    // Общий метод для включения устройства
     fun turnOn() {
         println("$name от $brand включен.")
     }
-
-    // Общий метод для выключения устройства
     fun turnOff() {
         println("$name от $brand выключен.")
     }
 }
 
-// Класс "Компьютер", наследующий от "Устройства"
 class Computer(brand: String, val ram: Int) : Device("Компьютер", brand) {
-
-    // Специфический метод для запуска программы
     fun runProgram(programName: String) {
         println("Программа $programName запущена на компьютере с $ram ГБ оперативной памяти.")
     }
 }
 
-// Класс "Смартфон", наследующий от "Устройства"
 class Smartphone(brand: String, val cameraResolution: Int) : Device("Смартфон", brand) {
-
-    // Специфический метод для фотографии
     fun takePhoto() {
-        println("Фото сделано с разрешением камеры $cameraResolution МП.")
+        println("Фото сделано. Разрешение $cameraResolution МП.")
     }
 }
 
 fun main() {
-    // Создаем объект класса "Компьютер" и вызываем его методы
-    val computer = Computer(brand = "Dell", ram = 16)
+    val computer = Computer(brand = "Huawei", ram = 8)
     computer.turnOn()
-    computer.runProgram("IntelliJ IDEA")
+    computer.runProgram("Android Studio")
     computer.turnOff()
 
-    // Создаем объект класса "Смартфон" и вызываем его методы
-    val smartphone = Smartphone(brand = "Samsung", cameraResolution = 108)
+    val smartphone = Smartphone(brand = "IPhone", cameraResolution = 3)
     smartphone.turnOn()
     smartphone.takePhoto()
     smartphone.turnOff()
